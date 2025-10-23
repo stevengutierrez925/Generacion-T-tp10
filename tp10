@@ -1,0 +1,187 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP10 Responsivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio Web Responsivo</h1>
+        <button id="btn-menu">☰ Menú</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Este es un ejemplo de página web responsiva usando HTML, CSS y JavaScript.</p>
+            <img src="https://via.placeholder.com/500x300" alt="Ejemplo de imagen">
+        </section>
+
+        <aside id="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>Enlace 1</li>
+                <li>Enlace 2</li>
+                <li>Enlace 3</li>
+            </ul>
+        </aside>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <p>Ofrecemos diseño web, desarrollo front-end y consultoría técnica.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Podes enviarnos un mensaje a info@ejemplo.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web Responsivo</p>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        btnMenu.addEventListener('click', () => {
+            if(navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
+
+style.css:
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2b5797;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#btn-menu {
+    display: none;
+    background-color: #1e3e6e;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 3;
+}
+
+aside {
+    background-color: #d9e1f2;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #2b5797;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #2b5797;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    #btn-menu {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    section, aside {
+        padding: 15px;
+    }
+}
